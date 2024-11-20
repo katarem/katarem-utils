@@ -3,6 +3,7 @@ package io.github.katarem;
 public class Pair<A,B> {
     private A first;
     private B second;
+
     public A getFirst(){
         return first;
     }
@@ -54,5 +55,11 @@ public class Pair<A,B> {
         return "Pair(" + first + "," + second + ")";
     }
 
-    
+    @SuppressWarnings("rawtypes")
+    public static final Pair EMPTY = new Pair<>(null, null);
+
+    public boolean isEmpty(){
+        return this.first == null || this.second == null;
+    }
+
 }
